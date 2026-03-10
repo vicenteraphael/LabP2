@@ -16,6 +16,7 @@ public class Parabola {
 	public Parabola(double a, double b, double c) {
 		this.a = a;
 		this.b = b;
+		this.c = c;
 		this.delta = b * b - 4 * a * c;
 
 		this.x1 = (- b + Math.sqrt(delta)) / (2 * a);
