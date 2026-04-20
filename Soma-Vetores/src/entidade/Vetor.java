@@ -3,9 +3,11 @@ package entidade;
 import java.lang.Math;
 
 public class Vetor {
-    private double valor;
-    private double anguloGrau;
-    private double anguloRad;
+    private final double valor;
+    private final double angulo;
+
+    private final double x;
+    private final double y;
 
     public static Vetor soma(Vetor A, Vetor B) {
         double valorX = A.getX() + B.getX();
@@ -21,16 +23,19 @@ public class Vetor {
 
     public Vetor(double valor, double angulo) {
         this.valor = Math.abs(valor);
-        this.anguloGrau = ((angulo % 360) + 360) % 360; // Normalizando o ângulo
-        this.anguloRad = Math.toRadians(anguloGrau);
+        this.angulo = ((angulo % 360) + 360) % 360; // Normalizando o ângulo
+        double anguloRad = Math.toRadians(angulo);
+
+        this.x = valor * Math.cos(anguloRad);
+        this.y = valor * Math.sin(anguloRad);
     }
 
     public double getX() {
-        return valor * Math.cos(anguloRad);
+        return x;
     }
 
     public double getY() {
-        return valor * Math.sin(anguloRad);
+        return y;
         
     }
 
@@ -38,16 +43,12 @@ public class Vetor {
         return valor;
     }
 
-    public double getAnguloGrau() {
-        return anguloGrau;
-    }
-
-    public double getAnguloRad() {
-        return anguloRad;
+    public double getAngulo() {
+        return angulo;
     }
 
     public String toString() {
         return "valor = " + valor +
-                "\nangulo (°) = " + anguloGrau;
+                "\nangulo (°) = " + angulo;
     }
 }

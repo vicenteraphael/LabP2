@@ -3,39 +3,44 @@ package entidade;
 import java.lang.Math;
 
 public class Vetor {
-    private double valor;
-    private double anguloGrau;
-    private double anguloRad;
+    private final double valor;
+    private final double angulo;
+
+    private final double x;
+    private final double y;
 
     public Vetor(double valor, double angulo) {
         this.valor = Math.abs(valor);
-        this.anguloGrau = ((angulo % 360) + 360) % 360;
-        this.anguloRad = Math.toRadians(anguloGrau);
+        this.angulo = ((angulo % 360) + 360) % 360;
+        double anguloRad = Math.toRadians(angulo);
+
+        this.x = valor * Math.cos(anguloRad);
+        this.y = valor * Math.sin(anguloRad);
     }
 
     public double getValor() {
         return valor;
     }
 
-    public double getAnguloGrau() {
-        return anguloGrau;
+    public double getAngulo() {
+        return angulo;
     }
 
     public double getX() {
-        return valor * Math.cos(anguloRad);
+        return x;
         
     }
 
     public double getY() {
-        return valor * Math.sin(anguloRad);
+        return y;
          
     }
 
     public String toString() {
         return "valor = " + valor +
-                "\nangulo (°) = " + anguloGrau +
-                "\nvalorX = " + getX() +
-                "\nvalory = " + getY() +
-                "\nresultado = " + getX() + " +/- " + getY();
+                "\nangulo (°) = " + angulo +
+                "\nvalorX = " + x +
+                "\nvalorY = " + y +
+                "\nresultado = " + x + " +/- " + y;
     }
 }
