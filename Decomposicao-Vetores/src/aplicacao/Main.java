@@ -17,7 +17,7 @@ public class Main {
         double alfa = scanner.nextDouble();
 
         Vetor vetor = new Vetor(a, alfa);
-        System.out.println("\nV:\n" + vetor.toString());
+        System.out.println("\nVETOR:\n" + vetor.toString());
 
         scanner.close();
     }

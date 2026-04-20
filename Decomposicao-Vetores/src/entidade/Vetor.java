@@ -10,6 +10,7 @@ public class Vetor {
     public Vetor(double valor, double angulo) {
         this.valor = Math.abs(valor);
         this.anguloGrau = ((angulo % 360) + 360) % 360;
+        this.anguloRad = Math.toRadians(anguloGrau);
     }
 
     public double getValor() {
@@ -31,10 +32,10 @@ public class Vetor {
     }
 
     public String toString() {
-        return "valor = " +
+        return "valor = " + valor +
                 "\nangulo (°) = " + anguloGrau +
-                "valorX = " + getX() +
-                "valory = " + getX() +
-                "resultado = " + getX() + " +/- " + getY();
+                "\nvalorX = " + getX() +
+                "\nvalory = " + getY() +
+                "\nresultado = " + getX() + " +/- " + getY();
     }
 }
