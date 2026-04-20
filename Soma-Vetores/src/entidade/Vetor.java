@@ -47,6 +47,7 @@ public class Vetor {
         return angulo;
     }
 
+    @Override
     public String toString() {
         return "valor = " + valor +
                 "\nangulo (°) = " + angulo;

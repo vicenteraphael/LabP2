@@ -11,7 +11,7 @@ public class Vetor {
 
     public Vetor(double valor, double angulo) {
         this.valor = Math.abs(valor);
-        this.angulo = ((angulo % 360) + 360) % 360;
+        this.angulo = ((angulo % 360) + 360) % 360; // Normalizando o ângulo
         double anguloRad = Math.toRadians(angulo);
 
         this.x = valor * Math.cos(anguloRad);
@@ -36,6 +36,7 @@ public class Vetor {
          
     }
 
+    @Override
     public String toString() {
         return "valor = " + valor +
                 "\nangulo (°) = " + angulo +
