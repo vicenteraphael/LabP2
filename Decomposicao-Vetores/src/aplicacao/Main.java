@@ -1,11 +1,11 @@
-package main;
+package aplicacao;
 
-import vetor.Vetor;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entidade.Vetor;
+
 public class Main {
-    
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
@@ -18,9 +18,6 @@ public class Main {
 
         Vetor vetor = new Vetor(a, alfa);
         System.out.println("\nV:\n" + vetor.toString());
-
-        System.out.println("Vx:\n" + vetor.vetorX().toString());
-        System.out.println("Vy:\n" + vetor.vetorY().toString());
 
         scanner.close();
     }
