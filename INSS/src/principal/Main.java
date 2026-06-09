@@ -1,3 +1,10 @@
+/*
+Olá, prezado professor, como vai?
+
+Eu fiz usando a tabela 1 de faixas e alíquotas presentes em:
+https://www.gov.br/inss/pt-br/direitos-e-deveres/inscricao-e-contribuicao/tabela-de-contribuicao-mensal
+*/
+
 package principal;
 
 import java.util.Locale;
